@@ -8,7 +8,7 @@
 
 <#AccountStatement> a rr:TriplesMap ;
   rml:logicalSource [
-    rml:source "input/camt.053_P_CH2409000000301389578_300646986_0_2018090101312118.xml" ;
+    rml:source "input/camt.053.xml" ;
     rml:referenceFormulation ql:XPath ;
     rml:iterator "/Document/BkToCstmrStmt/Stmt/Ntry" ;
   ] ;
