@@ -1,6 +1,6 @@
 # ISO 20022 camt.53 (account statement) mapping to RDF
 
-This is a super minimal version of #topic. Pretty much everything can and should be improved. Mapping file can be found in [config/cam53.ttl](config/cam53.ttl)
+This is a super minimal version of #topic. Pretty much everything can and should be improved. Mapping file can be found in [config/cam53.ttl](config/cam53.ttl). It was created for and tested with account statements from Postfinance in Switzerland only.
 
 Some ideas:
 
