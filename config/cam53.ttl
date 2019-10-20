@@ -4,11 +4,15 @@
 @prefix ql: <http://semweb.mmlab.be/ns/ql#> .
 @prefix dct: <http://purl.org/dc/terms/>.
 @prefix qb: <http://purl.org/linked-data/cube#>.
+@prefix carml: <http://carml.taxonic.com/carml/> .
 @prefix camt53: <http://example.org/cam53/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <#AccountStatement> a rr:TriplesMap ;
   rml:logicalSource [
-    rml:source "input/camt.053.xml" ;
+    rml:source [
+      a carml:Stream ;
+	  ] ;
     rml:referenceFormulation ql:XPath ;
     rml:iterator "/Document/BkToCstmrStmt/Stmt/Ntry" ;
   ] ;
@@ -37,7 +41,7 @@
     rr:predicate camt53:amount ;
     rr:objectMap [
       rml:reference "Amt";
-      rr:datatype xsd:double
+      rr:datatype xsd:double ;
     ]
  ] ;
 
@@ -45,7 +49,7 @@
     rr:predicate camt53:valueDate ;
     rr:objectMap [
       rml:reference "ValDt/Dt";
-      rr:datatype xsd:date
+      rr:datatype xsd:date ;
     ]
  ] ;
 
@@ -53,7 +57,7 @@
     rr:predicate camt53:bookingDate ;
     rr:objectMap [
       rml:reference "BookgDt/Dt";
-      rr:datatype xsd:date
+      rr:datatype xsd:date ;
     ]
  ] ;
 
