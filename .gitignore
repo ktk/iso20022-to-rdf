@@ -1,0 +1,4 @@
+input/*
+lib/*
+target/*
+.DS_Store
