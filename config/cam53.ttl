@@ -12,13 +12,17 @@
   rml:logicalSource [
     rml:source [
       a carml:Stream ;
+		  carml:declaresNamespace [
+			carml:namespacePrefix "cam" ;
+			carml:namespaceName "urn:iso:std:iso:20022:tech:xsd:camt.053.001.04" ;
+		  ] ;
 	  ] ;
     rml:referenceFormulation ql:XPath ;
-    rml:iterator "/Document/BkToCstmrStmt/Stmt/Ntry" ;
+    rml:iterator "/cam:Document/cam:BkToCstmrStmt/cam:Stmt/cam:Ntry" ;
   ] ;
 
   rr:subjectMap [
-    rr:template "http://data.ktk.netlabs.org/{AcctSvcrRef}" ;
+    rr:template "http://data.ktk.netlabs.org/{cam:AcctSvcrRef}" ;
     rr:class qb:Observation ;
   #  rr:termType rr:IRI ;
   ] ;
@@ -26,21 +30,21 @@
   rr:predicateObjectMap [
     rr:predicate camt53:identifier ;
     rr:objectMap [
-      rml:reference "AcctSvcrRef";
+      rml:reference "cam:AcctSvcrRef";
     ]
  ] ;
 
   rr:predicateObjectMap [
     rr:predicate camt53:comment ;
     rr:objectMap [
-      rml:reference "AddtlNtryInf";
+      rml:reference "cam:AddtlNtryInf";
     ]
  ] ;
 
   rr:predicateObjectMap [
     rr:predicate camt53:amount ;
     rr:objectMap [
-      rml:reference "Amt";
+      rml:reference "cam:Amt";
       rr:datatype xsd:double ;
     ]
  ] ;
@@ -48,7 +52,7 @@
   rr:predicateObjectMap [
     rr:predicate camt53:valueDate ;
     rr:objectMap [
-      rml:reference "ValDt/Dt";
+      rml:reference "cam:ValDt/cam:Dt";
       rr:datatype xsd:date ;
     ]
  ] ;
@@ -56,10 +60,8 @@
   rr:predicateObjectMap [
     rr:predicate camt53:bookingDate ;
     rr:objectMap [
-      rml:reference "BookgDt/Dt";
+      rml:reference "cam:BookgDt/cam:Dt";
       rr:datatype xsd:date ;
     ]
  ] ;
-
-.
-
+ .
