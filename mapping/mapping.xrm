@@ -1,0 +1,13 @@
+output carml
+
+map cam53 from cam53_Ntry {
+	subject template "http://example.org/{0}" with AcctSvcrRef;
+
+	types
+		cube.Observation
+
+	properties
+		dimension.amount from Amt with datatype xsd.float;
+		dimension.bookingDate from BookgDt with datatype xsd.date ;
+	 	dimension.description from AddtlNtryInf ;
+	}

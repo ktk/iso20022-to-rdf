@@ -1,0 +1,70 @@
+vocabulary xsd {
+	prefix "xsd" "http://www.w3.org/2001/XMLSchema#"
+
+	datatypes
+		float
+		gYear
+		date
+		dateTime
+}
+
+vocabulary cube {
+	prefix "cube" "https://cube.link/"
+
+	classes
+		Cube
+		Constraint
+		ObservationSet
+		Observation
+
+	properties
+		observationSet
+		observationShape
+		observation
+		observedBy
+}
+
+vocabulary schema {
+	prefix "schema" "https://schema.org/"
+
+	classes
+		Invoice
+		Person
+		PriceSpecification
+
+		properties
+		accountId
+		customer
+		paymentMethod
+		description
+		price
+		priceCurrency
+		orderNumber
+		orderDate
+}
+
+
+vocabulary dimension {
+	prefix "dimension" "https://example.org/dimension/"
+
+	properties
+		amount
+		bookingDate
+		valutaDate
+		description
+}
+
+vocabulary skos {
+	prefix "skos" "http://www.w3.org/2004/02/skos/core#"
+
+	properties
+		notation
+}
+
+vocabulary example {
+	prefix "ex" "http://example.org/"
+
+	properties
+		amount
+}
+

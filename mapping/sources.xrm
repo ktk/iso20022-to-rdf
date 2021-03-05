@@ -1,0 +1,24 @@
+xml-namespace-extension iso20022ns {
+	prefix "cam" "urn:iso:std:iso:20022:tech:xsd:camt.053.001.04"
+}
+
+logical-source cam53_Ntry {
+	type xml
+	source "http://example.org/bla.xml"
+	xml-namespace-extension iso20022ns
+	iterator "/cam:Document/cam:BkToCstmrStmt/cam:Stmt/cam:Ntry" 
+	
+
+	
+	referenceables
+		AcctSvcrRef "cam:AcctSvcrRef"
+		AddtlNtryInf "cam:AddtlNtryInf"
+		Amt "cam:Amt"
+		Dt "cam:Dt"
+		CdtDbtInd "cam:CdtDbtInd"
+		BookgDt "cam:BookgDt/cam:Dt"
+		ValDt "cam:ValDt/cam:Dt"
+		AddtlNtryInf "cam:AddtlNtryInf"
+		Sts "cam:Sts"
+}
+

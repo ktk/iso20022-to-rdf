@@ -1,0 +1,48 @@
+PREFIX rr: <http://www.w3.org/ns/r2rml#>
+PREFIX rml: <http://semweb.mmlab.be/ns/rml#>
+PREFIX ql: <http://semweb.mmlab.be/ns/ql#>
+PREFIX carml: <http://carml.taxonic.com/carml/>
+PREFIX cube: <https://cube.link/>
+PREFIX dimension: <https://example.org/dimension/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+<#cam53>
+	rml:logicalSource [
+		rml:source [
+			a carml:Stream ;
+			carml:streamName "http://example.org/bla.xml" ;
+			carml:declaresNamespace [
+				carml:namespacePrefix "cam" ;
+				carml:namespaceName "urn:iso:std:iso:20022:tech:xsd:camt.053.001.04" ;
+			] ;
+		] ;
+		rml:referenceFormulation ql:XPath ;
+		rml:iterator "/cam:Document/cam:BkToCstmrStmt/cam:Stmt/cam:Ntry" ;
+	];
+	
+	rr:subjectMap [
+		rr:template "http://example.org/{cam:AcctSvcrRef}" ;
+		rr:class cube:Observation ;
+	];
+	
+	rr:predicateObjectMap [
+		rr:predicate dimension:amount ;
+		rr:objectMap [
+			rml:reference "cam:Amt" ;
+			rr:datatype xsd:float ;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate dimension:bookingDate ;
+		rr:objectMap [
+			rml:reference "cam:BookgDt/cam:Dt" ;
+			rr:datatype xsd:date ;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicate dimension:description ;
+		rr:objectMap [
+			rml:reference "cam:AddtlNtryInf" ;
+		];
+	]
+.
